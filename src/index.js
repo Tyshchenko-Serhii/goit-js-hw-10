@@ -57,11 +57,11 @@ const filter = array => {
   } else if (array.length >= 10) {
     clearList();
     Notiflix.Notify.info(
-      'Too many matches found. Please enter a more specific name 🤖'
+      'Too many matches found. Please enter a more specific name'
     );
   } else {
     clearList();
-    Notiflix.Notify.failure('Oops, there is no country with that name 😱');
+    Notiflix.Notify.failure('Oops, there is no country with that name');
   }
 };
 
@@ -70,8 +70,8 @@ refs.inputCountryElement.addEventListener(
   debounce(onInput, DEBOUNCE_DELAY)
 );
 
-function onInput(evn) {
-  const searchName = evn.target.value.trim();
+function onInput(event) {
+  const searchName = event.target.value.trim();
   if (searchName === '') {
     return;
   }
